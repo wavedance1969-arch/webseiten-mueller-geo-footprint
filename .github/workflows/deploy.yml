@@ -20,4 +20,11 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
-          server-dir: /ki-blog/
+          # Trage hier den korrekten absoluten Server-Pfad ein (z.B. /httpdocs/ki-blog/ oder /html/ki-blog/)
+          server-dir: /ki-blog/ 
+          # Schließt Git-Metadaten und unnötige Dateien aus, damit nur sauber übertragen wird
+          exclude: |
+            **/.git*
+            **/.git*/**
+            README.md
+            .github/**
